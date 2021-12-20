@@ -1,7 +1,7 @@
 <template>
-      <div class="container1">
-        <button class="btn-cancel-container1">X</button>
-        <div class="container">
+      <div class="card-recipes">
+        <button class="btn-cancel-card-recipes">X</button>
+        <div class="container-card-recipes">
             <div class="div1"> </div>
             <div class="div2"> </div>
             <div class="div3"> </div>
@@ -15,13 +15,14 @@
 
 <script>
 export default {
+    name: 'Card_Recipes',
 
 }
 </script>
 
-<style>
+<style scoped>
 
-    .container1 {
+    .card-recipes {
     position: fixed;
     border: 1px solid black;
     top: 5%;
@@ -32,14 +33,14 @@ export default {
 
 }
 
-.btn-cancel-container1 {
+.btn-cancel-card-recipes {
     position: absolute;
     top: 15px;
     right: 15px;
 
 }
 
-.container {
+.container-card-recipes {
     /* position: fixed; */
     position: absolute;
     display: grid;
