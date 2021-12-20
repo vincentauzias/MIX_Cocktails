@@ -1,14 +1,32 @@
 <template>
       <div class="card-recipes">
         <button class="btn-cancel-card-recipes">X</button>
+
         <div class="container-card-recipes">
-            <div class="div1"> </div>
-            <div class="div2"> </div>
-            <div class="div3"> </div>
-            <div class="div4"> </div>
-            <div class="div5"> 
-                <button class="btn-add-comment">Ajoutez un commentaire</button>
+
+            <div class="card-recipes-image"> image </div>
+
+            <div class="card-recipes-title"> titre </div>
+
+            <div class="card-recipes-ingredients"> ingredients </div>
+
+            <div class="card-recipes-recipe"> recette </div>
+
+            <div class="card-recipes-add-comment">
+
+                <form action="">
+                    <input type="textarea" maxlength="512" value="déposez un commentaire">
+                    <input type="submit" value="Envoyer">
+                </form>
+
             </div>
+
+            <div class="card-recipes-comments"> 
+
+                <button class="btn-add-comment">Ajoutez un commentaire</button>
+
+            </div>
+            
         </div>
     </div>
 </template>
@@ -16,7 +34,9 @@
 <script>
 export default {
     name: 'Card_Recipes',
-
+    data() {
+        
+    },
 }
 </script>
 
@@ -41,15 +61,12 @@ export default {
 }
 
 .container-card-recipes {
-    /* position: fixed; */
     position: absolute;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    /* width: 80%;
-    height: 80%; */
     border: 1px solid black;
     top: 50px;
     left: 50px;
@@ -58,24 +75,44 @@ export default {
     border-radius: 5px;
     }
     
-    .div1 { grid-area: 1 / 1 / 4 / 3;
+    .card-recipes-image { 
+        grid-area: 1 / 1 / 4 / 3;
         border: 1px solid black;
-        background: red; }
-    .div2 { grid-area: 1 / 3 / 2 / 5;
+        background: red; 
+    }
+
+    .card-recipes-title { 
+        grid-area: 1 / 3 / 2 / 5;
         border: 1px solid black;
         border-bottom: none;
-        background: yellow; }
-    .div3 { grid-area: 2 / 3 / 3 / 5;
+        background: yellow; 
+    }
+
+    .card-recipes-ingredients { 
+        grid-area: 2 / 3 / 3 / 5;
         border: 1px solid black;
         border-bottom: none;
         border-top: none;
-        background: blue; }
-    .div4 { grid-area: 3 / 3 / 4 / 5;
+        background: blue; 
+    }
+
+    .card-recipes-recipe { 
+        grid-area: 3 / 3 / 4 / 5;
         border: 1px solid black;
         border-top: none;
-        background: green; }
-    .div5 { grid-area: 4 / 1 / 5 / 5;
+        background: green; 
+    }
+
+    .card-recipes-add-comment {
+        background: grey;
+        grid-area: 4 / 4 / 5 / 5;
+    }
+
+    .card-recipes-comments { 
+        grid-area: 4 / 1 / 5 / 4;
         border: 1px solid black;
-        background: purple; }
+        background: purple; 
+    }
+    
         
 </style>
