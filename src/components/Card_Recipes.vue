@@ -23,7 +23,6 @@
 
             <div class="card-recipes-comments"> 
 
-                <button class="btn-add-comment">Ajoutez un commentaire</button>
 
             </div>
             
