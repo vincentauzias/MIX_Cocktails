@@ -8,7 +8,7 @@
 
 import "normalize.css"
 import "@fortawesome/fontawesome-free/js/all.js"
-import Card_Recipes from "./components/Card_Recipes.vue"
+import Card_Recipes from "./components/CardRecipes.vue"
 
 export default {
   name: 'App',

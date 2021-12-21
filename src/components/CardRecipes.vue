@@ -22,8 +22,9 @@
             </div>
 
             <div class="card-recipes-comments"> 
-
-
+                <div>
+                    <SliderComments/>
+                </div>
             </div>
             
         </div>
@@ -31,11 +32,18 @@
 </template>
 
 <script>
+
+import SliderComments from './SliderComments.vue'
+
 export default {
     name: 'Card_Recipes',
     data() {
+
         
     },
+    components: {
+        SliderComments,
+    }
 }
 </script>
 
@@ -108,10 +116,13 @@ export default {
     }
 
     .card-recipes-comments { 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         grid-area: 4 / 1 / 5 / 4;
         border: 1px solid black;
         background: purple; 
     }
-    
+
         
 </style>
