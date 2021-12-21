@@ -44,9 +44,4 @@
         z-index: 1;
     }
 
-
-
-    /* .vueperslides__bullets--outside {
-        display: none !important;
-    } */
 </style>

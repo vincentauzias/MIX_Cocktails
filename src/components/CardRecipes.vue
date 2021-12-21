@@ -15,7 +15,10 @@
             <div class="card-recipes-add-comment">
 
                 <form action="">
-                    <input type="textarea" maxlength="512" value="déposez un commentaire">
+                    <!-- <input type="textarea" maxlength="512" value="déposez un commentaire">
+                    <br/> -->
+                    <textarea  class="form-control" maxlength="512">Laissez un commentaire</textarea>
+                    <br/>
                     <input type="submit" value="Envoyer">
                 </form>
 
@@ -111,6 +114,7 @@ export default {
     }
 
     .card-recipes-add-comment {
+        
         background: grey;
         grid-area: 4 / 4 / 5 / 5;
     }
@@ -123,6 +127,31 @@ export default {
         border: 1px solid black;
         background: purple; 
     }
+
+textarea {
+    /* padding: 0; */
+    min-width:calc(100% - 6px);
+    max-width:calc(100% - 6px);
+    /* min-height:80px; */
+    height:calc(75% - 6px);
+    width:calc(100% - 6px);
+}
+
+input {
+    width:100%;
+    border-radius: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex;
+    align-items: flex-start;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+}
+
 
         
 </style>
