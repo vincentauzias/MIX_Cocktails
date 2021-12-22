@@ -20,7 +20,8 @@
     "normalize.css": "^8.0.1",
     "uuid": "^8.3.2",
     "vue": "^3.0.0",
-    "vue-router": "^4.0.0-0"
+    "vue-router": "^4.0.0-0",
+    "vueperslides": "^3.3.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

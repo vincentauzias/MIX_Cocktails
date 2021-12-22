@@ -1,15 +1,15 @@
 <template>
-  <div></div>
+  <MySpace />
 </template>
 
 <script>
 
-import "normalize.css"
-import "@fortawesome/fontawesome-free/js/all.js"
+  import "normalize.css"
+  import "@fortawesome/fontawesome-free/js/all.js"
 
-export default {
-    
-}
+  export default {
+      name: 'App',
+  }
 
 </script>
 
