@@ -1,15 +1,20 @@
 <template>
-  <div></div>
+  <FormSign />
 </template>
 
 <script>
 
-import "normalize.css"
-import "@fortawesome/fontawesome-free/js/all.js"
+  import "normalize.css"
+  import "@fortawesome/fontawesome-free/js/all.js"
 
-export default {
-    
-}
+  import FormSign from './components/FormSign.vue'
+
+  export default { 
+    name: 'App',
+    components: {
+      FormSign
+    }
+  }
 
 </script>
 
