@@ -1,5 +1,5 @@
 <template>
-  <MySpace />
+  <div></div>
 </template>
 
 <script>
