@@ -6,6 +6,10 @@
     <Contact></Contact>
     <Footers></Footers>
     <Home></Home>
+            <Warning
+            v-bind:appear="appear"
+            v-bind:toggleModal="toggleModal"
+        ></Warning>
   </div>
 
 
@@ -21,6 +25,7 @@ import Contact from "./views/Contact.vue";
 import Footers from "./components/Footer.vue"
 import Navbar from './components/Navbar.vue'
 import Home from "./views/Home.vue";
+import Warning from "./components/Warning.vue"
 
 
 export default {
@@ -31,8 +36,19 @@ export default {
     Recipes,
     Contact,
     Footers,
-    Home
-  }   
+    Home,
+    Warning
+  } ,
+  data() {
+    return {
+        appear: true,
+    };
+},
+  methods: {
+      toggleModal: function () {
+          this.appear = !this.appear;
+      },
+},  
 
 }
 
