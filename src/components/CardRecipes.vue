@@ -17,9 +17,9 @@
                 <form action="">
                     <!-- <input type="textarea" maxlength="512" value="déposez un commentaire">
                     <br/> -->
-                    <textarea  class="form-control" maxlength="512">Laissez un commentaire</textarea>
+                    <textarea  class="form-control" maxlength="512" v-model='User.commentaire'>Laissez un commentaire</textarea>
                     <br/>
-                    <input type="submit" value="Envoyer">
+                    <input type="submit" value="Envoyer" v-on:click='addToAPI'>
                 </form>
 
             </div>
@@ -36,23 +36,47 @@
 
 <script>
 
+import axios from 'axios'
 import SliderComments from './SliderComments.vue'
 
 export default {
     name: 'Card_Recipes',
     data() {
+        return {
+            User : {commentaire:''}
+        }
 
         
     },
+
+    methods: {
+        addToAPI() {
+
+            let newUser = {
+                comment: this.User.commentaire
+            }
+            console.log(newUser);
+
+            axios.post('http://localhost:4001/api/commentaires' , newUser)
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+        }
+    },
+
     components: {
         SliderComments,
+        
     }
 }
 </script>
 
 <style scoped>
 
-    .card-recipes {
+.card-recipes {
     position: fixed;
     border: 1px solid black;
     top: 5%;
