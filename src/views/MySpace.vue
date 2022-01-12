@@ -1,29 +1,29 @@
 <template>
-  <div class="slide-random-container">
-    <div class="slide-random-content">
-      <SliderRandom />
+  <div class="slide-popular-container">
+    <div class="slide-popular-content">
+      <SliderPopular />
     </div>
   </div>
 </template>
 
 <script>
-  import SliderRandom from '../components/SliderRandom.vue'
+  import SliderPopular from '../components/SliderPopular.vue'
 
   export default {
     name: 'MySpace',
     components: {
-      SliderRandom,
+      SliderPopular,
     },
   }
 </script>
 
 <style>
-  .slide-random-container {
+  .slide-popular-container {
     width: 100vw;
     height: 100vh;
   }
 
-  .slide-random-content {
+  .slide-popular-content {
     height: 100%;
     width: 100%;
     display: flex;
