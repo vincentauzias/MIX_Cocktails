@@ -64,6 +64,9 @@
 
 <script>
 // import Modal from "./Modal.vue";
+import dotenv from "dotenv";
+dotenv.config();
+
 export default {
     name: "Search",
     //   components: {
@@ -87,8 +90,7 @@ export default {
         },
         async getList() {
             const res = await this.$axios.get(
-                process.env.VUE_APP_BASE_URL_API +
-                    `/search.php?s=${this.search}`
+                process.env.VUE_APP_TEST + `/search.php?s=${this.search}`
             );
             this.tab = res.data.drinks;
             console.log("tab dans search: " + this.tab);
@@ -132,6 +134,10 @@ window.onload = function () {
 </script>
 
 <style scoped>
+.container-search {
+    width: 100vw;
+    height: 72.6vh;
+}
 .none {
     display: none;
 }
