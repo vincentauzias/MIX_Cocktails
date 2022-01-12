@@ -1,5 +1,5 @@
 <template>
-  <Footers></Footers>
+  <Navbar></Navbar>
 </template>
 
 <script>
@@ -7,13 +7,13 @@
 import "normalize.css"
 import "@fortawesome/fontawesome-free/js/all.js"
 
-import Footers from './components/Footer.vue'
+import Navbar from './components/Navbar.vue'
 
 
 export default {
   name: 'App',
     components: {
-      Footers,
+      Navbar,
     },
 }
 
