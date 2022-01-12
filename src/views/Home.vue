@@ -1,14 +1,21 @@
 <template>
-  <div></div>
+    <div>
+        <Search class="component-search"></Search>
+    </div>
 </template>
 
 <script>
-  export default {
+import Search from "../components/Search.vue";
 
-  }
-
+export default {
+    name: "Home",
+    components: { Search },
+};
 </script>
 
-<style>
-
+<style scoped>
+.component-search {
+    width: 100vw;
+    height: 72.6vh;
+}
 </style>
