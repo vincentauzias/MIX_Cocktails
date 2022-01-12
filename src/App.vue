@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Card_Recipes></Card_Recipes>
+    <CardRecipes></CardRecipes>
   </div>
 </template>
 
@@ -8,12 +8,12 @@
 
 import "normalize.css"
 import "@fortawesome/fontawesome-free/js/all.js"
-import Card_Recipes from "./components/CardRecipes.vue"
+import CardRecipes from "./components/CardRecipes.vue"
 
 export default {
   name: 'App',
   components: {
-    Card_Recipes
+    CardRecipes
   }
     
 }
@@ -21,5 +21,5 @@ export default {
 </script>
 
 <style>
-
+    
 </style>
