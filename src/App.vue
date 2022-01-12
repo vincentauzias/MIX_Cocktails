@@ -5,6 +5,7 @@
     <Recipes></Recipes>
     <Contact></Contact>
     <Footers></Footers>
+    <Home></Home>
   </div>
 
 
@@ -19,6 +20,7 @@ import Recipes from "./views/Recipes.vue"
 import Contact from "./views/Contact.vue";
 import Footers from "./components/Footer.vue"
 import Navbar from './components/Navbar.vue'
+import Home from "./views/Home.vue";
 
 
 export default {
@@ -28,21 +30,24 @@ export default {
     CardRecipes,
     Recipes,
     Contact,
-    Footers
+    Footers,
+    Home
   }   
 
 }
 
 </script>
 
+
 <style>
-  #app {
+#app {
+    cursor: default;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     height: 100vh;
     background-color: #FFFEF9;
-    overflow: hidden;
+    /* overflow: hidden; */
   }  
 </style>
