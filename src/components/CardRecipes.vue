@@ -1,36 +1,90 @@
 <template>
-      <div class="card-recipes">
-        <button class="btn-cancel-card-recipes">X</button>
+      <!-- <div class="card-recipes">
+        <button class="btn-cancel-card-recipes">X</button> -->
+    <div @mouseenter="getResult()" class="card-recipes" v-if="revele">
+        <div class="overlay" @click="toggleModal"></div>
+        <button class="btn-cancel-card-recipes" @click="toggleModal">X</button>
+         <div class="container-card-recipes"
+                v-for="item in tabi"
+                :key="item.idDrink"
+                :id="item.idDrink"
+            >
 
-        <div class="container-card-recipes">
+                <div class="card-recipes-image"> <img
+                        style="height: 100%; width: 100%;"
+                        :src="item[0].strDrinkThumb"
+                        alt=""
+                    /> </div>
 
-            <div class="card-recipes-image"> image </div>
+                <div class="card-recipes-title"> <h2>
+                        {{ item[0].strDrink }}
+                    </h2> </div>
 
-            <div class="card-recipes-title"> titre </div>
+                <div class="card-recipes-ingredients"> 
+                    <p>
+                        <span>
+                            {{ item[0].strIngredient1 }}
+                        </span>
+                        {{ item[0].strMeasure1 }}
+                    </p>
+                    <p>
+                        <span>
+                            {{ item[0].strIngredient2 }}
+                        </span>
+                        {{ item[0].strMeasure2 }}
+                    </p>
+                    <p>
+                        <span>
+                            {{ item[0].strIngredient3 }}
+                        </span>
+                        {{ item[0].strMeasure3 }}
+                    </p>
+                    <p>
+                        <span>
+                            {{ item[0].strIngredient4 }}
+                        </span>
+                        {{ item[0].strMeasure4 }}
+                    </p>
+                    <p>
+                        <span>
+                            {{ item[0].strIngredient5 }}
+                        </span>
+                        {{ item[0].strMeasure5 }}
+                    </p>
+                    <p>
+                        <span>
+                            {{ item[0].strIngredient6 }}
+                        </span>
+                        {{ item[0].strMeasure6 }}
+                    </p>
+                    <p>
+                        <span>
+                            {{ item[0].strIngredient7 }}
+                        </span>
+                        {{ item[0].strMeasure7 }}
+                    </p> 
+                </div>
 
-            <div class="card-recipes-ingredients"> ingredients </div>
+                <div class="card-recipes-recipe"> {{ item[0].strInstructions }} </div>
 
-            <div class="card-recipes-recipe"> recette </div>
+                <div class="card-recipes-add-comment">
 
-            <div class="card-recipes-add-comment">
+                    <form action="">
+                        <!-- <input type="textarea" maxlength="512" value="déposez un commentaire">
+                        <br/> -->
+                        <textarea  class="form-control" maxlength="512" v-model='User.commentaire'>Laissez un commentaire</textarea>
+                        <br/>
+                        <input type="submit" value="Envoyer" v-on:click='addToAPI'>
+                    </form>
 
-                <form action="">
-                    <!-- <input type="textarea" maxlength="512" value="déposez un commentaire">
-                    <br/> -->
-                    <textarea  class="form-control" maxlength="512" v-model='User.commentaire'>Laissez un commentaire</textarea>
-                    <br/>
-                    <input type="submit" value="Envoyer" v-on:click='addToAPI'>
-                </form>
+                </div>
 
-            </div>
-
-            <div class="card-recipes-comments"> 
-                <div>
-                    <SliderComments/>
+                <div class="card-recipes-comments"> 
+                    <div>
+                        <SliderComments/>
+                    </div>
                 </div>
             </div>
-            
-        </div>
     </div>
 </template>
 
@@ -40,10 +94,12 @@ import axios from 'axios'
 import SliderComments from './SliderComments.vue'
 
 export default {
-    name: 'Card_Recipes',
+    name: 'CardRecipes',
+    props: ["revele", "toggleModal", "idModal"],
     data() {
         return {
-            User : {commentaire:''}
+            User : {commentaire:''},
+            tabi : []
         }
 
         
@@ -64,7 +120,17 @@ export default {
             .catch((error) => {
                 console.log(error);
             })
-        }
+        },
+         async getResult() {
+            const res = await this.$axios.get(
+                `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${this.idModal}`
+            );
+            this.tabi = res.data;
+            // console.log("idModal: " + this.idModal);
+            console.log(this.tabi);
+            return this.tabi;
+        },
+
     },
 
     components: {
@@ -72,6 +138,7 @@ export default {
         
     }
 }
+
 </script>
 
 <style scoped>
@@ -84,6 +151,7 @@ export default {
     width: 90%;
     height: 90%;
     border-radius: 5px;
+    z-index: 102;
 
 }
 
@@ -110,6 +178,8 @@ export default {
     }
     
     .card-recipes-image { 
+        
+        /* box-sizing: border-box; */
         grid-area: 1 / 1 / 4 / 3;
         border: 1px solid black;
         background: red; 
@@ -174,6 +244,15 @@ form {
     height: 100%;
     min-width: 100%;
     min-height: 100%;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
 }
 
 

@@ -5,7 +5,7 @@
             <a href="https://github.com/vincentauzias/MIX_Cocktails"><i class="fab fa-github"></i></a>
         </span>
         <hr class="footer-hr">
-        <span>Contributeur: Vincent Auzias - Mickael Tailhades - Emmanuelle Dufrenay</span>
+        <span>Contributeurs: Vincent Auzias - Mickael Tailhades - Emmanuelle Dufrenay</span>
     </footer>
 </template>
 

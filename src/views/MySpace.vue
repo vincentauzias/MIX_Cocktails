@@ -20,7 +20,7 @@
 <style>
   .slide-popular-container {
     width: 100vw;
-    height: 100vh;
+    height: 72.6vh;
   }
 
   .slide-popular-content {

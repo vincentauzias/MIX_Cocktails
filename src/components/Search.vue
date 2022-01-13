@@ -54,24 +54,24 @@
                 <div class="carousel-container-img7"></div>
             </div>
         </div>
-        <!-- <Modal
+        <CardRecipes
             :idModal="idDrinkChoice"
             v-bind:revele="revele"
             v-bind:toggleModal="toggleModal"
-        ></Modal> -->
+        ></CardRecipes>
     </div>
 </template>
 
 <script>
-// import Modal from "./Modal.vue";
+import CardRecipes from "./CardRecipes.vue";
 import dotenv from "dotenv";
 dotenv.config();
 
 export default {
     name: "Search",
-    //   components: {
-    //     Modal,
-    // },
+      components: {
+        CardRecipes
+    },
 
     data() {
         return {
@@ -90,7 +90,7 @@ export default {
         },
         async getList() {
             const res = await this.$axios.get(
-                process.env.VUE_APP_TEST + `/search.php?s=${this.search}`
+                process.env.VUE_APP_BASE_URL_API + `/search.php?s=${this.search}`
             );
             this.tab = res.data.drinks;
             console.log("tab dans search: " + this.tab);
