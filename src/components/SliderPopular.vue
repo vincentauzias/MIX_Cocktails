@@ -1,7 +1,8 @@
 <template>
     <vueper-slides
         class="no-shadow"
-        :visible-slides="3"
+        :visible-slides="7"
+        :slideRatio="1/7"
         :dragging-distance="70"
         :bullets="false">
 
@@ -46,7 +47,7 @@
 
 <style>
     .vueperslides {
-        width: 75%;
+        width: 70vw;
     }
     .vueperslide {
         transform: scale(0.85);

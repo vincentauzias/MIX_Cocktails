@@ -17,10 +17,10 @@
   }
 </script>
 
-<style>
+<style scoped>
   .slide-popular-container {
     width: 100vw;
-    height: 72.6vh;
+    height: 80vh;
   }
 
   .slide-popular-content {

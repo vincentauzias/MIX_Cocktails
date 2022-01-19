@@ -24,9 +24,8 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        height: 100px;
+        height: 12vh;
         background-color: #D2E5F5;
-        border-bottom: 1px solid #90C5F2;
     }
 
     .logo {

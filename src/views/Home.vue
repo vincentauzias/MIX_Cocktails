@@ -16,6 +16,6 @@ export default {
 <style scoped>
 .component-search {
     width: 100vw;
-    height: 72.6vh;
+    height: 80vh;
 }
 </style>

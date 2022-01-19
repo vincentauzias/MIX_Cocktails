@@ -16,20 +16,20 @@
             </div>
         </div>
 
-        <!-- <Modal
+        <CardRecipes
             :idModal="idDrinkChoice"
             v-bind:revele="revele"
             v-bind:toggleModal="toggleModal"
-        ></Modal> -->
+        ></CardRecipes>
     </div>
 </template>
 
 <script>
-// import Modal from "../components/Modal.vue";
+import CardRecipes from "../components/CardRecipes.vue";
 
 export default {
     name: "ResultFilter",
-    // components: { Modal },
+    components: { CardRecipes },
     props: ["tab"],
     data() {
         return { idDrinkChoice: "", revele: false };
@@ -44,7 +44,7 @@ export default {
         toggleModal: function () {
             this.revele = !this.revele;
         },
-     
+    
     },
 };
 </script>
@@ -52,7 +52,7 @@ export default {
 <style scoped>
 .list-search-all {
     width: 80vw;
-    height: 72.6vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;

@@ -12,9 +12,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .container-contact {
     width: 100vw;
-    height: 72.6vh;
+    height: 80vh;
 }
 </style>

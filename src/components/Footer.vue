@@ -19,12 +19,13 @@
 
 <style scoped>
     footer {
-        padding: 15px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         background-color: #82A7CA;
-        border-top: 1px solid #2974BB;
-        text-align: center;
-        vertical-align: middle;
         width: 100%;
+        height: 8vh;
     }
 
     .footer-hr {
