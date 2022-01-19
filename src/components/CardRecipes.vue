@@ -1,10 +1,8 @@
 <template>
-      <!-- <div class="card-recipes">
-        <button class="btn-cancel-card-recipes">X</button> -->
     <div @mouseenter="getResult()" class="card-recipes" v-if="revele">
         <div class="overlay" @click="toggleModal"></div>
         <button class="btn-cancel-card-recipes" @click="toggleModal">X</button>
-         <div class="container-card-recipes"
+        <div class="container-card-recipes"
                 v-for="item in tabi"
                 :key="item.idDrink"
                 :id="item.idDrink"
@@ -70,8 +68,6 @@
                 <div class="card-recipes-add-comment">
 
                     <form action="">
-                        <!-- <input type="textarea" maxlength="512" value="déposez un commentaire">
-                        <br/> -->
                         <textarea  class="form-control" maxlength="512" v-model='User.commentaire'>Laissez un commentaire</textarea>
                         <br/>
                         <input type="submit" value="Envoyer" v-on:click='addToAPI'>
@@ -81,7 +77,20 @@
 
                 <div class="card-recipes-comments"> 
                     <div>
-                        <SliderComments v-bind:idCocktail='idCocktail' />
+                        <vueper-slides
+                            class="no-shadow"
+                            :visible-slides="3"
+                            :slide-ratio="2 / 20"
+                            :dragging-distance="70"
+                            :bullets="false"
+                            :arrows-outside='false'       
+                        >
+                            <vueper-slide
+                                v-for="(slide, i) in slides"
+                                :key="i"
+                                :content="slide['commentaire']"
+                            />
+                        </vueper-slides>
                     </div>
                 </div>
             </div>
@@ -91,7 +100,8 @@
 <script>
 
 import axios from 'axios'
-import SliderComments from './SliderComments.vue'
+import { VueperSlides, VueperSlide } from 'vueperslides'
+import 'vueperslides/dist/vueperslides.css'
 
 export default {
     name: 'CardRecipes',
@@ -100,8 +110,8 @@ export default {
         return {
             User : {commentaire:''},
             tabi : [],
-            idCocktail : this.idModal
-            
+            slides: [],
+
         }
 
         
@@ -124,21 +134,35 @@ export default {
                 console.log(error);
             })
         },
-         async getResult() {
+        async getResult() {
             const res = await this.$axios.get(
                 `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${this.idModal}`
             );
             this.tabi = res.data;
-            // console.log("idModal: " + this.idModal);
             console.log(this.tabi);
             return this.tabi;
         },
+        idcock() {
+            axios.get('http://localhost:4001/api/userComment', { params: { idC: this.idModal } })
+            .then((rep) => {
+                    this.slides = rep.data.comments,
+                    console.log('test comment : ' + rep.data)
+                    console.log('test slides : ' + this.slides)
+    
+                    }
 
-    },
-
-    components: {
-        SliderComments,
+            )
+            .catch((error) => { console.log('bouyaka' + error)})
+        },
         
+    },
+    beforeUpdate() {
+        console.log('connard : ' + this.idModal)
+        this.idcock()   
+    },
+    components: {
+        VueperSlides, 
+        VueperSlide
     }
 }
 
@@ -226,10 +250,8 @@ export default {
     }
 
 textarea {
-    /* padding: 0; */
     min-width:calc(100% - 6px);
     max-width:calc(100% - 6px);
-    /* min-height:80px; */
     height:calc(75% - 6px);
     width:calc(100% - 6px);
 }
@@ -258,6 +280,17 @@ form {
     bottom: 0;
 }
 
+.vueperslide {
+        background-color: red;
+        transform: scale(0.85);
+        opacity: 0.5;
+    }
 
+    .vueperslide--active {
+        transform: scale(1);
+        transition: 0.5s ease-in-out;
+        opacity: 1;
+        z-index: 1;
+    }
         
 </style>

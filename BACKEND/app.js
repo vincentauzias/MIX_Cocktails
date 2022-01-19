@@ -12,11 +12,9 @@ dotenv.config()
 const DB_CONNECT = process.env.DB_CONNECT
 console.log(DB_CONNECT);
 
-mongoose.connect(DB_CONNECT ,
-    { useNewUrlParser: true,
- useUnifiedTopology: true })
-.then(() => console.log('Connexion à MongoDB réussie !'))
-.catch(() => console.log('Connexion à MongoDB échouée !'));
+mongoose.connect(DB_CONNECT, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('Connexion à MongoDB réussie !'))
+    .catch(() => console.log('Connexion à MongoDB échouée !'));
 
 
 import commentairesRoutes from './routes/commentaires.js'

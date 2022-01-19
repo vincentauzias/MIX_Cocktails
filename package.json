@@ -2,6 +2,7 @@
   "name": "mix_cocktails",
   "version": "0.1.0",
   "private": true,
+
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -19,6 +20,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.2",
     "nodemailer": "^6.7.2",
+    "nodemon": "^2.0.15",
     "normalize.css": "^8.0.1",
     "uuid": "^8.3.2",
     "vue": "^3.0.0",
