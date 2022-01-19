@@ -5,14 +5,26 @@
         :slide-ratio="2 / 20"
         :dragging-distance="70"
         :bullets="false"
-        :arrows-outside='false'>
-        <vueper-slide v-for="i in 10" :key="i" :title="i.toString()" />
+        :arrows-outside='false'
+       
+    >
+        <!-- <vueper-slide v-for="i in 10" :key="i" :title="i.toString()" /> -->
+        <vueper-slide
+            v-for="(slide, i) in slides"
+            :key="i"
+            :content="slide['commentaire']"
+        />
     </vueper-slides>
+ <span v-if='idCocktail'>
+    <input type="hidden" name="idCocktail" :value="idCocktail">
+</span>
+    
 </template>
 
 <script>
     import { VueperSlides, VueperSlide } from 'vueperslides'
     import 'vueperslides/dist/vueperslides.css'
+    import axios from 'axios'
 
     export default {
         name: 'SliderComments',
@@ -21,11 +33,40 @@
             VueperSlide
         },
         data: () => ({
-            slides: [{
-                title: 'Slide #1',
-                content: 'Slide content.'
-            }]
-        })
+            slides: [],
+            testComment: String,
+            
+        }),
+
+        props: ['idCocktail'],
+
+        methods: {
+            idcock() {
+                axios.get('http://localhost:4001/api/userComment', { params: { idC: this.idCocktail } })
+            }
+        },
+        created() {
+            console.log('connard' +this.idCocktail)
+            
+        }
+
+        // mounted() {
+        //     axios
+        //     // .get('http://localhost:4001/api/commentaires', { params: { idCocktail: '11000' } })
+        //     .get('http://localhost:4001/api/userComment', { params: { idC: this.idCocktail } })
+      
+        
+        //     // .then((rep) => {
+        //     //         this.slides = rep.data.comment,
+        //     //         this.testComment = rep.data.comment,
+        //     //         console.log('test comment' + rep)
+        //     //         console.log(this.slides)
+    
+        //     //         }
+
+        //     // )
+        //     // .catch((error) => { console.log('bouyaka' + error)})
+        // }
 }
 </script>
 

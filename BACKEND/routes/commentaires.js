@@ -1,6 +1,7 @@
 import express from 'express'
 
 import Comment from '../models/Comments.js';
+
 import { v4 as uuidv4 } from 'uuid'
 
 uuidv4() // => '72cf5dd7-2c86-4914-9072-b2204a779233'
@@ -9,22 +10,38 @@ uuidv4() // => '72cf5dd7-2c86-4914-9072-b2204a779233'
 // const Comment = require('../models/Comment')
 const router = express.Router()
 
-let commentaires = []
+// let newComment = []
 
-//toutes les routes commencent par /commentaires
+// //toutes les routes commencent par /commentaires
+// router.get('/', (req, res) => {
+//     res.send(newComment)
+// })
+
 router.get('/', (req, res) => {
-    res.send(commentaires)
-})
+    console.log('fuck' +req.body)
+    Comment.find()
+        .then(comments => res.status(200).json({ comments }))
+        .catch(error => res.status(400).json({ error }));
+  });
+
+  router.get('/:id', (req, res) => {
+    console.log('fuck' +req.body)
+    Comment.find()
+        .then(comments => res.status(200).json({ comments }))
+        .catch(error => res.status(400).json({ error }));
+  });
+
 
 router.post('/', (req) => {
     // = __v version en DB
     delete req.body.__v;
-    const comment = req.body.comment
+    const newComment = req.body.comment
+    const idCocktail = req.body.idCocktail
     // console.log(comment);
     // passer 'param' en plus de propriété
-    const newComment = new Comment({'commentaire':comment})
+    const comment = new Comment({'commentaire':newComment, 'idCocktail':idCocktail})
     // console.log(newComment);
-    newComment.save()
+    comment.save()
     //res.send(newComment)
 
     // const commentaireId = uuidv4() // => '72cf5dd7-2c86-4914-9072-b2204a779233'
@@ -39,31 +56,31 @@ router.post('/', (req) => {
 })
 
 
-router.get('/:id', (req, res) => {
-    const { id } = req.params
+// app.get('/api/userComment', (req, res) => {
+//     res.json("marche !")
+//     console.log('fuck' +req.params.id)
+//     const foundCommentaire = Comment.find({ 'idCocktail': 11000 });
 
-    const foundCommentaire = commentaires.find((commentaire) => commentaire.id === id)
+//     res.send(foundCommentaire)
+// })
 
-    res.send(foundCommentaire)
-})
+// router.delete('/:id', (req, res) => {
+//     const { id } = req.params
 
-router.delete('/:id', (req, res) => {
-    const { id } = req.params
+//     commentaires = commentaires.filter((commentaire) => commentaire.id !== id )
 
-    commentaires = commentaires.filter((commentaire) => commentaire.id !== id )
+//     res.send(`le commentaire ${id} est effacé de la BD`)
+// })
 
-    res.send(`le commentaire ${id} est effacé de la BD`)
-})
+// router.patch('/:id', (req, res) => {
+//     const { id } = req.params
+//     const { comment } = req.body
 
-router.patch('/:id', (req, res) => {
-    const { id } = req.params
-    const { comment } = req.body
+//     const commentaire = commentaires.find((commentaire) => commentaire.id === id)
+//     //comment nom du param donné dans le body refaire mm opération pour les autres (name, lastName...)
+//     if(comment) commentaire.comment = comment
 
-    const commentaire = commentaires.find((commentaire) => commentaire.id === id)
-    //comment nom du param donné dans le body refaire mm opération pour les autres (name, lastName...)
-    if(comment) commentaire.comment = comment
-
-    res.send(`le commentaire ${id} a été modifié avec succès`)
-})
+//     res.send(`le commentaire ${id} a été modifié avec succès`)
+// })
 
 export default router

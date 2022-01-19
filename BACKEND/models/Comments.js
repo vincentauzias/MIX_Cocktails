@@ -5,6 +5,9 @@ const commentSchema = new Schema({
     commentaire:{
     type: String, 
     // required:true
+    },
+    idCocktail:{
+    type: String,
     }
 });
 

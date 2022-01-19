@@ -20,6 +20,7 @@ mongoose.connect(DB_CONNECT ,
 
 
 import commentairesRoutes from './routes/commentaires.js'
+import userComment from './routes/userComment.js'
 
 
 
@@ -30,6 +31,8 @@ app.use(cors())
 app.use(bodyParser.json())
 
 app.use('/api/commentaires', commentairesRoutes)
+app.use('/api/userComment', userComment)
+
 
 app.get('/', (req, res) => {
     console.log('TEST');

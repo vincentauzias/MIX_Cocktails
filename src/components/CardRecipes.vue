@@ -81,7 +81,7 @@
 
                 <div class="card-recipes-comments"> 
                     <div>
-                        <SliderComments/>
+                        <SliderComments v-bind:idCocktail='idCocktail' />
                     </div>
                 </div>
             </div>
@@ -99,7 +99,9 @@ export default {
     data() {
         return {
             User : {commentaire:''},
-            tabi : []
+            tabi : [],
+            idCocktail : this.idModal
+            
         }
 
         
@@ -109,7 +111,8 @@ export default {
         addToAPI() {
 
             let newUser = {
-                comment: this.User.commentaire
+                comment: this.User.commentaire,
+                idCocktail: this.idModal
             }
             console.log(newUser);
 
