@@ -8,202 +8,207 @@
                 :id="item.idDrink"
             >
 
-                <div class="card-recipes-image"> <img
-                        style="height: 100%; width: 100%;"
-                        :src="item[0].strDrinkThumb"
-                        alt=""
-                    /> </div>
+            <div class="card-recipes-image"> 
+                <img
+                    style="height: 100%; width: 100%;"
+                    :src="item[0].strDrinkThumb"
+                    alt=""
+                /> 
+            </div>
 
-                <div class="card-recipes-title"> <h2>
-                        {{ item[0].strDrink }}
-                    </h2> </div>
+            <div class="card-recipes-title"> 
+                <h2>{{ item[0].strDrink }}</h2> 
+            </div>
 
-                <div class="card-recipes-ingredients"> 
-                    <p>
-                        <span>
-                            {{ item[0].strIngredient1 }}
-                        </span>
-                        {{ item[0].strMeasure1 }}
-                    </p>
-                    <p>
-                        <span>
-                            {{ item[0].strIngredient2 }}
-                        </span>
-                        {{ item[0].strMeasure2 }}
-                    </p>
-                    <p>
-                        <span>
-                            {{ item[0].strIngredient3 }}
-                        </span>
-                        {{ item[0].strMeasure3 }}
-                    </p>
-                    <p>
-                        <span>
-                            {{ item[0].strIngredient4 }}
-                        </span>
-                        {{ item[0].strMeasure4 }}
-                    </p>
-                    <p>
-                        <span>
-                            {{ item[0].strIngredient5 }}
-                        </span>
-                        {{ item[0].strMeasure5 }}
-                    </p>
-                    <p>
-                        <span>
-                            {{ item[0].strIngredient6 }}
-                        </span>
-                        {{ item[0].strMeasure6 }}
-                    </p>
-                    <p>
-                        <span>
-                            {{ item[0].strIngredient7 }}
-                        </span>
-                        {{ item[0].strMeasure7 }}
-                    </p> 
-                </div>
+            <div class="card-recipes-ingredients"> 
+                <p>
+                    <span>{{ item[0].strIngredient1 }}</span>
+                    {{ item[0].strMeasure1 }}
+                </p>
+                <p>
+                    <span>{{ item[0].strIngredient2 }}</span>
+                    {{ item[0].strMeasure2 }}
+                </p>
+                <p>
+                    <span>{{ item[0].strIngredient3 }}</span>
+                    {{ item[0].strMeasure3 }}
+                </p>
+                <p>
+                    <span>{{ item[0].strIngredient4 }}</span>
+                    {{ item[0].strMeasure4 }}
+                </p>
+                <p>
+                    <span>{{ item[0].strIngredient5 }}</span>
+                    {{ item[0].strMeasure5 }}
+                </p>
+                <p>
+                    <span>{{ item[0].strIngredient6 }}</span>
+                    {{ item[0].strMeasure6 }}
+                </p>
+                <p>
+                    <span>{{ item[0].strIngredient7 }}</span>
+                    {{ item[0].strMeasure7 }}
+                </p> 
+                <p>
+                    <span>{{ item[0].strIngredient8 }}</span>
+                    {{ item[0].strMeasure8 }}
+                </p> 
+                <p>
+                    <span>{{ item[0].strIngredient9 }}</span>
+                    {{ item[0].strMeasure9 }}
+                </p> 
+                <p>
+                    <span>{{ item[0].strIngredient10 }}</span>
+                    {{ item[0].strMeasure10 }}
+                </p> 
+                <p>
+                    <span>{{ item[0].strIngredient11 }}</span>
+                    {{ item[0].strMeasure11 }}
+                </p> 
+                <p>
+                    <span>{{ item[0].strIngredient12 }}</span>
+                    {{ item[0].strMeasure12 }}
+                </p> 
+                <p>
+                    <span>{{ item[0].strIngredient13 }}</span>
+                    {{ item[0].strMeasure13 }}
+                </p> 
+                <p>
+                    <span>{{ item[0].strIngredient14 }}</span>
+                    {{ item[0].strMeasure14 }}
+                </p> 
+                <p>
+                    <span>{{ item[0].strIngredient15 }}</span>
+                    {{ item[0].strMeasure15 }}
+                </p> 
+            </div>
 
-                <div class="card-recipes-recipe"> {{ item[0].strInstructions }} </div>
+            <div class="card-recipes-recipe"> {{ item[0].strInstructions }} </div>
 
-                <div class="card-recipes-add-comment">
+            <div class="card-recipes-add-comment">
+                <form action="">
+                    <textarea  class="form-control" maxlength="512" v-model='User.commentaire'>Laissez un commentaire</textarea>
+                    <br/>
+                    <input type="submit" value="Envoyer" v-on:click='addToAPI'>
+                </form>
+            </div>
 
-                    <form action="">
-                        <textarea  class="form-control" maxlength="512" v-model='User.commentaire'>Laissez un commentaire</textarea>
-                        <br/>
-                        <input type="submit" value="Envoyer" v-on:click='addToAPI'>
-                    </form>
-
-                </div>
-
-                <div class="card-recipes-comments"> 
-                    <div>
-                        <vueper-slides
-                            class="no-shadow"
-                            :visible-slides="3"
-                            :slide-ratio="2 / 20"
-                            :dragging-distance="70"
-                            :bullets="false"
-                            :arrows-outside='false'       
-                        >
-                            <vueper-slide
-                                v-for="(slide, i) in slides"
-                                :key="i"
-                                :content="slide['commentaire']"
-                            />
-                        </vueper-slides>
-                    </div>
+            <div class="card-recipes-comments"> 
+                <div>
+                    <vueper-slides
+                        class="no-shadow"
+                        :visible-slides="3"
+                        :slide-ratio="2 / 20"
+                        :dragging-distance="70"
+                        :bullets="false"
+                        :arrows-outside='false'       
+                    >
+                        <vueper-slide
+                            v-for="(slide, i) in slides"
+                            :key="i"
+                            :content="slide['commentaire']"
+                        />
+                    </vueper-slides>
                 </div>
             </div>
+        </div>
     </div>
 </template>
 
 <script>
+    import { VueperSlides, VueperSlide } from 'vueperslides'
+    import 'vueperslides/dist/vueperslides.css'
 
-import axios from 'axios'
-import { VueperSlides, VueperSlide } from 'vueperslides'
-import 'vueperslides/dist/vueperslides.css'
+    export default {
+        name: 'CardRecipes',
+        props: ["revele", "toggleModal", "idModal"],
+        data() {
+            return {
+                User : {commentaire:''},
+                tabi : [],
+                slides: [],
 
-export default {
-    name: 'CardRecipes',
-    props: ["revele", "toggleModal", "idModal"],
-    data() {
-        return {
-            User : {commentaire:''},
-            tabi : [],
-            slides: [],
-
-        }
-
-        
-    },
-
-    methods: {
-        addToAPI() {
-
-            let newUser = {
-                comment: this.User.commentaire,
-                idCocktail: this.idModal
             }
-            console.log(newUser);
 
-            axios.post('http://localhost:4001/api/commentaires' , newUser)
-            .then((response) => {
-                console.log(response);
-            })
-            .catch((error) => {
-                console.log(error);
-            })
+            
         },
-        async getResult() {
-            const res = await this.$axios.get(
-                `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${this.idModal}`
-            );
-            this.tabi = res.data;
-            console.log(this.tabi);
-            return this.tabi;
-        },
-        idcock() {
-            axios.get('http://localhost:4001/api/userComment', { params: { idC: this.idModal } })
-            .then((rep) => {
-                    this.slides = rep.data.comments,
-                    console.log('test comment : ' + rep.data)
-                    console.log('test slides : ' + this.slides)
-    
-                    }
 
-            )
-            .catch((error) => { console.log('bouyaka' + error)})
+        methods: {
+            addToAPI() {
+
+                let newUser = {
+                    comment: this.User.commentaire,
+                    idCocktail: this.idModal
+                }
+                console.log(newUser);
+                this.$axios.post('http://localhost:4001/api/commentaires' , newUser)
+            },
+            async getResult() {
+                const res = await this.$axios.get(
+                    `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${this.idModal}`
+                );
+                this.tabi = res.data;
+                console.log(this.tabi);
+                return this.tabi;
+            },
+            idcock() {
+                this.$axios.get('http://localhost:4001/api/userComment', { params: { idC: this.idModal } })
+                .then((rep) => {
+                        this.slides = rep.data.comments,
+                        console.log('test comment : ' + rep.data)
+                        console.log('test slides : ' + this.slides)
+                        }
+                )
+                .catch((error) => { console.log('bouyaka' + error)})
+            },
+            
         },
-        
-    },
-    beforeUpdate() {
-        console.log('connard : ' + this.idModal)
-        this.idcock()   
-    },
-    components: {
-        VueperSlides, 
-        VueperSlide
+        beforeUpdate() {
+            console.log('connard : ' + this.idModal)
+            this.idcock()   
+        },
+        components: {
+            VueperSlides, 
+            VueperSlide
+        }
     }
-}
 
 </script>
 
 <style scoped>
 
-.card-recipes {
-    position: fixed;
-    border: 1px solid black;
-    top: 5%;
-    left: 5%;
-    width: 90%;
-    height: 90%;
-    border-radius: 5px;
-    z-index: 102;
-
-}
-
-.btn-cancel-card-recipes {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-
-}
-
-.container-card-recipes {
-    position: absolute;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    border: 1px solid black;
-    top: 50px;
-    left: 50px;
-    right: 50px;
-    bottom: 50px;
-    border-radius: 5px;
+    .card-recipes {
+        position: fixed;
+        border: 1px solid black;
+        top: 5%;
+        left: 5%;
+        width: 90%;
+        height: 90%;
+        border-radius: 5px;
+        z-index: 102;
     }
-    
+    .btn-cancel-card-recipes {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+    .container-card-recipes {
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        border: 1px solid black;
+        top: 50px;
+        left: 50px;
+        right: 50px;
+        bottom: 50px;
+        border-radius: 5px;
+    }
+    .card-recipes-ingredients span {
+        font-weight: 900;
+    }
     .card-recipes-image { 
         
         /* box-sizing: border-box; */
@@ -211,14 +216,12 @@ export default {
         border: 1px solid black;
         background: red; 
     }
-
     .card-recipes-title { 
         grid-area: 1 / 3 / 2 / 5;
         border: 1px solid black;
         border-bottom: none;
         background: yellow; 
     }
-
     .card-recipes-ingredients { 
         grid-area: 2 / 3 / 3 / 5;
         border: 1px solid black;
@@ -226,20 +229,17 @@ export default {
         border-top: none;
         background: blue; 
     }
-
     .card-recipes-recipe { 
         grid-area: 3 / 3 / 4 / 5;
         border: 1px solid black;
         border-top: none;
         background: green; 
     }
-
     .card-recipes-add-comment {
         
         background: grey;
         grid-area: 4 / 4 / 5 / 5;
     }
-
     .card-recipes-comments { 
         display: flex;
         flex-direction: column;
@@ -249,48 +249,44 @@ export default {
         background: purple; 
     }
 
-textarea {
-    min-width:calc(100% - 6px);
-    max-width:calc(100% - 6px);
-    height:calc(75% - 6px);
-    width:calc(100% - 6px);
-}
-
-input {
-    width:100%;
-    border-radius: 5px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex;
-    align-items: flex-start;
-    height: 100%;
-    min-width: 100%;
-    min-height: 100%;
-}
-
-.overlay {
-    background: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-}
-
-.vueperslide {
-        background-color: red;
-        transform: scale(0.85);
-        opacity: 0.5;
+    .card-recipes-add-comment textarea {
+        min-width:calc(100% - 6px);
+        max-width:calc(100% - 6px);
+        height:calc(75% - 6px);
+        width:calc(100% - 6px);
     }
 
+    .card-recipes-add-comment input {
+        width:100%;
+        border-radius: 5px;
+    }
+
+    .card-recipes-add-comment form {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex;
+        align-items: flex-start;
+        height: 100%;
+        min-width: 100%;
+        min-height: 100%;
+    }
+    .overlay {
+        background: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+    .vueperslide {
+            background-color: red;
+            transform: scale(0.85);
+            opacity: 0.5;
+        }
     .vueperslide--active {
         transform: scale(1);
         transition: 0.5s ease-in-out;
         opacity: 1;
         z-index: 1;
     }
-        
 </style>

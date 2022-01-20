@@ -3,10 +3,7 @@
         <div class="list-search-all">
             <div
                 :style="{ backgroundImage: `url(${element.strDrinkThumb})` }"
-                @click="
-                    getId($event);
-                    toggleModal();
-                "
+                @click="getId($event); toggleModal();"
                 class="list-search-item"
                 v-for="element in tab"
                 :key="element.idDrink"
@@ -20,77 +17,76 @@
             :idModal="idDrinkChoice"
             v-bind:revele="revele"
             v-bind:toggleModal="toggleModal"
-        ></CardRecipes>
+        />
     </div>
 </template>
 
 <script>
-import CardRecipes from "../components/CardRecipes.vue";
+    import CardRecipes from "../components/CardRecipes.vue";
 
-export default {
-    name: "ResultFilter",
-    components: { CardRecipes },
-    props: ["tab"],
-    data() {
-        return { idDrinkChoice: "", revele: false };
-    },
-    methods: {
-        //retieve id for modal
-        getId(event) {
-            this.idDrinkChoice = event.target.id;
-            // console.log(this.tab);
-            return this.idDrinkChoice;
+    export default {
+        name: "ResultFilter",
+        components: { CardRecipes },
+        props: ["tab"],
+        data() {
+            return { idDrinkChoice: "", revele: false };
         },
-        toggleModal: function () {
-            this.revele = !this.revele;
+        methods: {
+            //retieve id for modal
+            getId(event) {
+                this.idDrinkChoice = event.target.id;
+                // console.log(this.tab);
+                return this.idDrinkChoice;
+            },
+            toggleModal: function () {
+                this.revele = !this.revele;
+            },
         },
-    
-    },
-};
+    };
 </script>
 
 <style scoped>
-.list-search-all {
-    width: 80vw;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-height: 72.6vh;
-    overflow: scroll;
-    overflow-x: hidden;
-    cursor: pointer;
-}
+    .list-search-all {
+        width: 80vw;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-height: 72.6vh;
+        overflow: scroll;
+        overflow-x: hidden;
+        cursor: pointer;
+    }
 
-::-webkit-scrollbar {
-    width: 2px;
-    height: 90%;
-}
-::-webkit-scrollbar-track {
-    background-color: rgb(182, 177, 177);
-}
-::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
-}
+    ::-webkit-scrollbar {
+        width: 2px;
+        height: 90%;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: rgb(182, 177, 177);
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
 
-::-webkit-scrollbar-corner {
-    background-color: black;
-}
+    ::-webkit-scrollbar-corner {
+        background-color: black;
+    }
 
-.list-search-item {
-    margin: 15px;
-    height: 150px;
-    width: 150px;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-}
+    .list-search-item {
+        margin: 15px;
+        height: 150px;
+        width: 150px;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+    }
 
-.list-search-item span {
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    text-align: center;
-}
+    .list-search-item span {
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        text-align: center;
+    }
 </style>

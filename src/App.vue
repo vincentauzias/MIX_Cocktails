@@ -1,8 +1,8 @@
 <template>
-  <Navbar></Navbar>
+  <Navbar />
   <router-view />
-  <Footers></Footers>
-  <Warning v-bind:appear="appear" v-bind:toggleModal="toggleModal"></Warning>
+  <Footers />
+  <Warning v-bind:appear="appear" v-bind:toggleModal="toggleModal" />
 </template>
 
 <script>

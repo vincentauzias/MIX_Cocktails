@@ -3,11 +3,10 @@ const { Schema } = mongoose;
 
 const commentSchema = new Schema({
     commentaire:{
-    type: String, 
-    // required:true
+        type: String, 
     },
     idCocktail:{
-    type: String,
+        type: String,
     }
 });
 
