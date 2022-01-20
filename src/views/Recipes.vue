@@ -13,7 +13,6 @@
 		</div>
 		
 		<ResultFilter v-else v-bind:tab="tab" />
-		<!-- <button @click="clear">CLEAR</button> -->
 	</div>
 </template>
 
@@ -52,10 +51,6 @@
 				const res = await this.$axios.get(process.env.VUE_APP_BASE_URL_API + `/filter.php?i=${this.ingredient}`);
 				this.tab = res.data.drinks;
 				return this.tab;
-			},	
-			// clear le tableau de recherche
-			clear() {
-				this.tab = []
 			}
 		}
 	};

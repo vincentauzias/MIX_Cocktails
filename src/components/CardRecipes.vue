@@ -89,16 +89,17 @@
                 <form action="">
                     <textarea  class="form-control" maxlength="512" v-model='User.commentaire'>Laissez un commentaire</textarea>
                     <br/>
-                    <input type="submit" value="Envoyer" v-on:click='addToAPI'>
+                    <input type="submit" value="Envoyer" @click='addToAPI'>
                 </form>
             </div>
 
-            <div class="card-recipes-comments"> 
-                <div>
+            <div class="card-recipes-comments">
                     <vueper-slides
                         class="no-shadow"
                         :visible-slides="3"
-                        :slide-ratio="2 / 20"
+                        slide-multiple
+                        :gap="3"
+                        :slide-ratio="1 / 10"
                         :dragging-distance="70"
                         :bullets="false"
                         :arrows-outside='false'       
@@ -109,7 +110,6 @@
                             :content="slide['commentaire']"
                         />
                     </vueper-slides>
-                </div>
             </div>
         </div>
     </div>
@@ -127,15 +127,10 @@
                 User : {commentaire:''},
                 tabi : [],
                 slides: [],
-
-            }
-
-            
+            }          
         },
-
         methods: {
             addToAPI() {
-
                 let newUser = {
                     comment: this.User.commentaire,
                     idCocktail: this.idModal
@@ -161,7 +156,6 @@
                 )
                 .catch((error) => { console.log('bouyaka' + error)})
             },
-            
         },
         beforeUpdate() {
             console.log('connard : ' + this.idModal)
@@ -278,15 +272,12 @@
         left: 0;
         bottom: 0;
     }
+    .vueperslides {
+        width: 100%;
+    }
     .vueperslide {
-            background-color: red;
-            transform: scale(0.85);
-            opacity: 0.5;
-        }
-    .vueperslide--active {
-        transform: scale(1);
-        transition: 0.5s ease-in-out;
+        background-color: red;
+        transform: scale(0.85);
         opacity: 1;
-        z-index: 1;
     }
 </style>

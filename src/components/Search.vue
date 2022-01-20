@@ -222,7 +222,6 @@
         height: 100%;
         overflow: hidden;
         background: center / cover no-repeat url(../assets/images/cocktail10.jpg);
-        /* background: #fffef9; */
     }
     .carousel .carousel-item {
         position: absolute;

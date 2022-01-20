@@ -6,8 +6,7 @@
         <div class="nav-menu">
             <router-link to="/">Accueil</router-link> | 
             <router-link to="/recipes">Recettes</router-link> | 
-            <router-link to="/contact">Contact</router-link> | 
-            <router-link to="/myspace">Mon espace</router-link>
+            <router-link to="/contact">Contact</router-link> 
         </div>
     </div>
 </template>

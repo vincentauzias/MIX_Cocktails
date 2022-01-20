@@ -2,7 +2,6 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Recipes from '../views/Recipes.vue'
 import Contact from '../views/Contact.vue'
-import MySpace from '../views/MySpace.vue'
 
 const routes = [
     {
@@ -19,11 +18,6 @@ const routes = [
         path: '/contact',
         name: 'Contact',
         component: Contact
-    },
-    {
-        path: '/myspace',
-        name: 'MySpace',
-        component: MySpace
     }
 ]
 
