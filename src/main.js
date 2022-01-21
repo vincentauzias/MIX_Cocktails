@@ -14,6 +14,3 @@ app.config.globalProperties.$axios = axios;
 
 app.use(VueCookieComply)
 app.mount('#app')
-
-
- 

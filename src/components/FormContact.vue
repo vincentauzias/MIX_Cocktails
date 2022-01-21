@@ -73,8 +73,7 @@
                 response: "",
                 show: false,
                 mineur: false,
-                messMineur:
-                    "Vous êtes mineur, vous ne pouvez pas envoyer de message",
+                messMineur: "Vous êtes mineur, vous ne pouvez pas envoyer de message",
             };
         },
         methods: {

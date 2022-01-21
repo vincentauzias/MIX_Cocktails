@@ -7,11 +7,11 @@
         <hr class="footer-hr">
         <span>Contributeurs: Vincent Auzias - Mickael Tailhades - Emmanuelle Dufrenay</span>
 
-        <vue-cookie-comply
-        :preferences="preferences"
-        @on-accept-all-cookies="onAccept"
-        @on-save-cookie-preferences="onSavePreferences"
-      />
+        <!-- <vue-cookie-comply
+            :preferences="preferences"
+            @on-accept-all-cookies="onAccept"
+            @on-save-cookie-preferences="onSavePreferences"
+        /> -->
     
     </footer>
 </template>
@@ -56,7 +56,7 @@
         font-size: 1.25em;
         color: #333;
     }
-    .cookie-comply{
+    /* .cookie-comply{
         z-index: 1000;
-    }
+    } */
 </style>

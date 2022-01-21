@@ -29,11 +29,11 @@
 
     .logo {
         height: 90%;
-        padding-left: 20px;
+        padding-left: 25px;
     }
 
     .nav-menu {
-        padding-right: 20px;
+        padding-right: 50px;
         font-size: 2em;
         font-weight: bold;
         color: #333;
@@ -42,6 +42,7 @@
     .nav-menu a {
         color: #333;
         text-decoration: none;
+        padding: 0 15px
     }
 
     .nav-menu a.router-link-exact-active {
