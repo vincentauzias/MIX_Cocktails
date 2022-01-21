@@ -1,18 +1,35 @@
 <template>
     <footer>
         <span>
-            Technologie utilisé: NodeJs, Vue3, MongoDB. Plus d'information sur GitHub
+            Technologies utilisées: NodeJs, Vue3, MongoDB. Plus d'information sur GitHub
             <a href="https://github.com/vincentauzias/MIX_Cocktails"><i class="fab fa-github"></i></a>
         </span>
         <hr class="footer-hr">
         <span>Contributeurs: Vincent Auzias - Mickael Tailhades - Emmanuelle Dufrenay</span>
+
+        <vue-cookie-comply
+        :preferences="preferences"
+        @on-accept-all-cookies="onAccept"
+        @on-save-cookie-preferences="onSavePreferences"
+      />
+    
     </footer>
 </template>
 
 <script>
-
+    // import { useCookies } from "vue3-cookies";
     export default {
-        name: 'Footers'
+        name: 'Footers',
+        //  setup() {
+        //     const { cookies } = useCookies();
+        //     return { cookies };
+        // },
+
+//          mounted() {
+//     let my_cookie_value = this.cookies.get("myCoookie");
+//     console.log(my_cookie_value);
+//     this.cookies.set("myCoookie", "abcdefg");
+//   }
     }
 
 </script>
@@ -38,5 +55,8 @@
     .fa-github {
         font-size: 1.25em;
         color: #333;
+    }
+    .cookie-comply{
+        z-index: 1000;
     }
 </style>

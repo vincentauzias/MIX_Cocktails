@@ -2,7 +2,6 @@
   "name": "mix_cocktails",
   "version": "0.1.0",
   "private": true,
-
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -24,7 +23,9 @@
     "normalize.css": "^8.0.1",
     "uuid": "^8.3.2",
     "vue": "^3.0.0",
+    "vue-cookie-comply": "^0.0.3",
     "vue-router": "^4.0.0-0",
+    "vue3-cookies": "^1.0.6",
     "vueperslides": "^3.3.2"
   },
   "devDependencies": {
