@@ -1,7 +1,7 @@
 <template>
     <footer>
         <span>
-            Technologies utilisées: NodeJs, Vue3, MongoDB. Plus d'information
+            Technologies utilisées: NodeJs, Vue3 js, MongoDB. Plus d'informations
             sur GitHub
             <a href="https://github.com/vincentauzias/MIX_Cocktails"
                 ><i class="fab fa-github"></i
