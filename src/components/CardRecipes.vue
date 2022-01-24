@@ -198,13 +198,16 @@ export default {
     z-index: 103;
 }
 .contour {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 560px;
     width: 840px;
-    padding: 20px;
+    padding: 10px;
     border-radius: 2px;
     z-index: 1020;
     background: #ffffff;
@@ -227,9 +230,6 @@ export default {
 
 .container-card-recipes {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     display: flex;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -278,7 +278,6 @@ export default {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    overflow: visible;
     -ms-flex: 0 1 auto;
     flex: 0 1 auto;
     -webkit-box-ordinal-group: 5;
@@ -298,6 +297,7 @@ export default {
     margin: 0 5% 0 5%;
     justify-content: flex-start;
     align-items: flex-start;
+    overflow: auto;
 }
 .card-recipes-ingredients span {
     font-weight: 900;
@@ -323,7 +323,6 @@ export default {
     height: 200px;
     z-index: 1020;
     background: #fffef9;
-    overflow-y: scroll;
 }
 ::-webkit-scrollbar {
     width: 5px;
@@ -343,6 +342,7 @@ export default {
     margin: 0 5% 0 5%;
     justify-content: flex-start;
     align-items: flex-start;
+    overflow-y: auto;
 }
 
 .card-recipes-add-comment {
@@ -440,7 +440,6 @@ export default {
         order: 5;
         width: 150px;
         height: 230px;
-        overflow-y: scroll;
     }
     .ingredients-p {
         height: 150px;
@@ -511,11 +510,10 @@ export default {
         top: 0;
         left: 0;
         transform: none;
-        height: 1090px;
+        height: 90%;
         width: 400px;
         padding: 10px;
         border-radius: 2px;
-        overflow-y: scroll !important;
     }
     .btn-cancel-card-recipes {
         position: absolute;
@@ -524,8 +522,11 @@ export default {
     }
 
     .container-card-recipes {
-        height: 1040px;
+        display: flex;
+        flex-direction: row;
+        height: 90%;
         width: 380px;
+        overflow-y: auto;
     }
 
     .card-recipes-image {
@@ -550,7 +551,6 @@ export default {
         order: 3;
         width: 380px;
         height: 230px;
-        overflow-y: scroll;
     }
 
     .card-recipes-recipe {
