@@ -60,7 +60,7 @@
         height: 350px;
         margin-right: auto;
         margin-left: auto;
-        z-index: 102;
+        z-index: 101;
         backdrop-filter: blur(10px);
         border-radius: 10px 10px 0 0;
     }

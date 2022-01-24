@@ -100,7 +100,7 @@
 
   .iconChat,
   .iconChatClose {
-    z-index: 102;
+    z-index: 101;
   }
 
   .cookie-comply,
