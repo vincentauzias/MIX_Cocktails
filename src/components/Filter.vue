@@ -77,6 +77,7 @@ export default {
     align-items: center;
     height: 100%;
     width: 25vw;
+    padding: 0 15px;
 }
 
 .container-filter div {
