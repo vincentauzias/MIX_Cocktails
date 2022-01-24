@@ -162,11 +162,10 @@
                         console.log('test slides : ' + this.slides)
                         }
                 )
-                .catch((error) => { console.log('bouyaka' + error)})
+                .catch((error) => { console.log('error' + error)})
             },
         },
         beforeUpdate() {
-            console.log('connard : ' + this.idModal)
             this.idcock()   
         },
         components: {

@@ -33,9 +33,8 @@ app.use('/api/userComment', userComment)
 
 
 app.get('/', (req, res) => {
-    console.log('TEST');
 
-    res.send('Hello ducon')
+    res.send('GET')
 })
 
 app.use(
@@ -65,12 +64,11 @@ transporter.verify(function (err) {
 });
 
 app.post("/api/send", (req, res) => {
-    console.log("hi");
+    // console.log("hi");
 
     let name = req.body.name;
     let email = req.body.email;
     let firstname = req.body.firstname;
-    // let birthDate = req.body.birthDate;
     let subject = req.body.subject;
     let message = req.body.message;
 
@@ -94,12 +92,12 @@ app.post("/api/send", (req, res) => {
     transporter.sendMail(mail, (err) => {
         if (err) {
             console.log(err);
-            // res.status(500).send("Something went wrong."); éviter le status 500, peut faire cracher la page
+            
             res.status(200).json({
                 msg: "Une erreur est survenue, merci de rééssayer plus tard.",
             });
         } else {
-            // console.log("hilo");
+           
             res.status(200).json({
                 msg: "OK",
             });
