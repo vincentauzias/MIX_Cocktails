@@ -273,6 +273,10 @@ export default {
     background: #fffef9e0;
 }
 
+.h3{
+    margin: 0 2% 0 2%;
+}
+
 .card-recipes-ingredients {
     display: flex;
     flex-direction: column;
