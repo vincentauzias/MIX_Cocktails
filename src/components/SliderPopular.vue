@@ -62,15 +62,15 @@ export default {
             breakpoints: {
                 1400: {
                     visibleSlides: 4,
-                    slideRatio: 1 / 4,
+                    slideRatio: 1 / 6,
                 },
                 900: {
                     visibleSlides: 3,
-                    slideRatio: 1 / 3,
+                    slideRatio: 1 / 5,
                 },
                 450: {
                     visibleSlides: 1,
-                    slideRatio: 1 / 1,
+                    slideRatio: 1 / 2,
                 },
             },
         };
