@@ -276,4 +276,49 @@
         background-size: cover;
         background-position: center;
     }
+
+     @media screen and (max-width: 450px) and (orientation: portrait){
+          .carousel {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        /* overflow: hidden; */
+        background: center / cover no-repeat url(../assets/images/cocktail10.jpg);
+    }
+    .carousel .carousel-item {
+        display: none;
+    }
+    .carousel .carousel-item.active {
+        display: none;
+    }
+    .carousel .carousel-item div {
+        display: none;
+    }
+
+    .carousel .carousel-item .carousel-container-img1 {
+        display: none;
+    }
+    .carousel .carousel-item .carousel-container-img2 {
+       display: none;
+    }
+    .carousel .carousel-item .carousel-container-img3 {
+        display: none;
+    }
+    .carousel .carousel-item .carousel-container-img4 {
+        display: none;
+    }
+
+    .carousel .carousel-item .carousel-container-img5 {
+        display: none;
+    }
+
+    .carousel .carousel-item .carousel-container-img6 {
+        display: none;
+    }
+
+    .carousel .carousel-item .carousel-container-img7 {
+       display: none;
+    }
+
+     }
 </style>

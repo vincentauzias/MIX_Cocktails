@@ -21,7 +21,7 @@ router.get('/:id', (req, res) => {
 });
 
 
-router.post('/', (req) => {
+router.post('/', (req, res) => {
     // = __v version en DB
     delete req.body.__v;
     const newComment = req.body.comment
@@ -32,6 +32,8 @@ router.post('/', (req) => {
     // console.log(newComment);
     comment.save()
     //res.send(newComment)
+    .then(comment => res.status(200).json({ comment, mess:'ok' }))
+    .catch(error => res.status(400).json({ error }));
 })
 
 export default router
