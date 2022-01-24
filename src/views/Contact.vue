@@ -6,15 +6,20 @@
 
 <script>
 import FormContact from "../components/FormContact.vue";
-    export default {
-        name: "Contact",
-        components: { FormContact },
-    };
+export default {
+    name: "Contact",
+    components: { FormContact },
+};
 </script>
 
 <style scoped>
+.container-contact {
+    width: 100vw;
+    height: 80vh;
+}
+@media screen and (max-width: 450px) and (orientation: portrait) {
     .container-contact {
-        width: 100vw;
-        height: 80vh;
+        height: 700px;
     }
+}
 </style>

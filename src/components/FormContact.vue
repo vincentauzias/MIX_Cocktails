@@ -97,7 +97,6 @@ export default {
                 /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
             if (inputEmail.value.match(validRegex)) {
-
                 //valid age
                 let today = new Date(),
                     birthDate = new Date(this.birthDate),
@@ -125,11 +124,9 @@ export default {
                                 res.data.msg ===
                                 "Une erreur est survenue, merci de rééssayer plus tard."
                             ) {
-
                                 this.response = "non ok";
                                 this.show = true;
                             } else {
-
                                 this.response =
                                     "Votre message a bien été envoyé.";
                                 this.show = true;
@@ -233,6 +230,12 @@ export default {
 
     .container-form img {
         display: none;
+    }
+}
+
+@media screen and (max-width: 450px) and (orientation: portrait) {
+    .container-form {
+        height: 100%;
     }
 }
 </style>

@@ -113,5 +113,13 @@
   }
   
   /* MEDIA MOBILE */
-  @media screen and (max-width: 450px) and (orientation: portrait) {}
+  @media screen and (max-width: 450px) and (orientation: portrait) {
+
+    .iconChat{
+      bottom: 3%;
+    }
+      .iconChatClose{
+        bottom: 3.5%;
+      }
+  }
 </style>

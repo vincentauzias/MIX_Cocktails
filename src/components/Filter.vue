@@ -64,7 +64,6 @@ export default {
 
 <style scoped>
 .container-filter {
-    /* background: rgb(255,255,255); */
     background: linear-gradient(
         180deg,
         rgba(210, 229, 245, 1) 0%,
@@ -105,5 +104,25 @@ export default {
     padding: 5px;
     border-radius: 10px;
     margin-top: 10px;
+}
+
+@media screen and (max-width: 450px) and (orientation: portrait) {
+    .container-filter {
+        background: linear-gradient(
+            180deg,
+            rgba(210, 229, 245, 1) 0%,
+            rgba(130, 167, 202, 1) 100%
+        );
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 50%;
+        width: 100%;
+        padding: 0 15px;
+    }
+    .container-filter div input {
+        width: 50vw;
+    }
 }
 </style>

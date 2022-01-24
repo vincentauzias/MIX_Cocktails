@@ -132,7 +132,7 @@ export default {
     .burger {
         display: block;
         position: absolute;
-        top: 0;
+        top: 2vh;
         right: 10px;
         padding: 0;
         width: 45px;
