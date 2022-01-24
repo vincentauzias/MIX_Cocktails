@@ -524,9 +524,6 @@ export default {
     }
 
     .container-card-recipes {
-        /* display: flex;
-            flex-direction: row; */
-
         height: 1040px;
         width: 380px;
     }
