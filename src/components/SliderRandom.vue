@@ -79,7 +79,6 @@ export default {
         //retieve id for modal
         getId(event) {
             this.idDrinkChoice = event.target.id;
-            // console.log(this.tab);
             return this.idDrinkChoice;
         },
         toggleModal: function () {
@@ -105,9 +104,14 @@ export default {
     width: 70vw;
 }
 
+.vueperslides__track-inner {
+    cursor: default;
+}
+
 .vueperslide {
     transform: scale(0.85);
     opacity: 0.5;
+    transition: 0.5s ease-in-out;
     border-radius: 2px;
 }
 
