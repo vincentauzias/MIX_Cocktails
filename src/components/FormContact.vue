@@ -92,7 +92,6 @@ export default {
         mailSend: function () {
             //valid email
             let inputEmail = document.getElementById("inputEmail");
-            console.log(inputEmail.value);
             let validRegex =
                 /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 

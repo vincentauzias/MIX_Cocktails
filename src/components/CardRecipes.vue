@@ -151,7 +151,6 @@ export default {
                 comment: this.User.commentaire,
                 idCocktail: this.idModal,
             };
-            console.log(newUser);
             this.$axios
                 .post("http://localhost:4001/api/commentaires", newUser)
                 .then((res) => {
@@ -165,7 +164,6 @@ export default {
                 `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${this.idModal}`
             );
             this.tabi = res.data;
-            console.log(this.tabi);
             return this.tabi;
         },
         idcock() {
@@ -174,12 +172,10 @@ export default {
                     params: { idC: this.idModal },
                 })
                 .then((rep) => {
-                    (this.slides = rep.data.comments),
-                        console.log("test comment : " + rep.data);
-                    console.log("test slides : " + this.slides);
+                    (this.slides = rep.data.comments)
                 })
-                .catch((error) => {
-                    console.log("error" + error);
+                .catch(() => {
+                    alert('une erreur est survenue')
                 });
         },
     },

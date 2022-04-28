@@ -85,7 +85,6 @@ export default {
     methods: {
         test(event) {
             this.idDrinkChoice = event.target.id;
-            console.log("search: " + this.idDrinkChoice);
             return this.idDrinkChoice;
         },
         async getList() {
@@ -94,7 +93,6 @@ export default {
                     `/search.php?s=${this.search}`
             );
             this.tab = res.data.drinks;
-            console.log("tab dans search: " + this.tab);
             return this.tab;
         },
         toggleModal: function () {

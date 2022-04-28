@@ -64,7 +64,6 @@ transporter.verify(function (err) {
 });
 
 app.post("/api/send", (req, res) => {
-    // console.log("hi");
 
     let name = req.body.name;
     let email = req.body.email;
@@ -72,7 +71,6 @@ app.post("/api/send", (req, res) => {
     let subject = req.body.subject;
     let message = req.body.message;
 
-    console.log(name);
 
     const mail = {
         from: name + " " + email,
@@ -97,7 +95,6 @@ app.post("/api/send", (req, res) => {
                 msg: "Une erreur est survenue, merci de rééssayer plus tard.",
             });
         } else {
-           
             res.status(200).json({
                 msg: "OK",
             });

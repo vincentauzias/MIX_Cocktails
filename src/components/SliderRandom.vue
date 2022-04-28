@@ -87,7 +87,7 @@ export default {
     },
     mounted() {
         this.$axios
-            .get(process.env.VUE_APP_BASE_URL_API + "/randomselection.php")
+            .get(process.env.VUE_APP_BASE_URL_API + "/random.php")
             .then((rep) => {
                 this.slides = rep.data.drinks;
             });

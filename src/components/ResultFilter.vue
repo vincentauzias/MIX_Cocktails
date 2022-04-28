@@ -35,7 +35,6 @@
             //retieve id for modal
             getId(event) {
                 this.idDrinkChoice = event.target.id;
-                // console.log(this.tab);
                 return this.idDrinkChoice;
             },
             toggleModal: function () {
